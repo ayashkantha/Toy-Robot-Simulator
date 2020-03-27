@@ -51,7 +51,8 @@ class Command {
     }
 
     /**
-     *  Check if the number of arguments not supported by the particular command.
+     * Check if the number of arguments not supported by the particular command.
+     *
      * @return false if not valid
      */
     boolean isValid() {

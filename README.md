@@ -40,3 +40,15 @@ $ java -jar build/libs/Robot-Assignment-1.0.jar
 ```cmd
 > java -jar .\build\libs\Robot-Assignment-1.0.jar
 ```
+
+### Running Tests
+
+#### Linux
+```shell
+$ ./gradlew :cleanTest :test --tests "com.zonedigital.simulation.robot.TestSimulator"
+```
+
+#### Windows
+```cmd
+>  .\gradlew.bat :cleanTest :test --tests "com.zonedigital.simulation.robot.TestSimulator"
+```
