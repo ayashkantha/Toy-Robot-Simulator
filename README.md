@@ -16,7 +16,7 @@ Clone this repo to your local machine using
 git clone https://github.com/ayashkantha/Toy-Robot-Simulator.git
 ```
 
-### Setup
+### Building Application
 
 #### Linux
 ```shell
@@ -41,7 +41,34 @@ $ java -jar build/libs/Robot-Assignment-1.0.jar
 > java -jar .\build\libs\Robot-Assignment-1.0.jar
 ```
 
+### Demo
+
+Once you correctly run the application, it will wait for your
+ input command. Please try the following command sequence.
+
+```shell
+$~
+place 3, 4, north
+$~
+move
+$~
+right
+$~
+move
+$~
+report
+```
+
+The final `report` command should output 
+
+`4, 5, EAST`
+
 ### Running Tests
+
+This doesn't display anything since every test passes. Do not worry
+about it because that means the application is working perfectly!
+
+Visit <a href="https://github.com/ayashkantha/Toy-Robot-Simulator/blob/master/src/test/java/com/zonedigital/simulation/robot/TestSimulator.java" target="_blank">**Tests**</a> for more info
 
 #### Linux
 ```shell
