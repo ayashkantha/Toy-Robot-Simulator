@@ -1,5 +1,6 @@
 package com.zonedigital.simulation.robot;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,24 +13,36 @@ class Simulator {
     private final Position upperBound = new Position(5, 5, null);
     private final Position currentPosition = new Position(-1, -1, null);
 
-    void start() {
+    void start(String batchInput) {
         Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("$~");
-            String input = scanner.nextLine();
+        if (batchInput != null) {
+            //Data batch support
+            List<String> commandLines = Arrays.asList(batchInput.split("\n"));
+            commandLines.forEach(this::processInput);
 
-            try {
-                Command command = CommandParser.parseCommand(input);
+        } else {
+            //command line support
+            while (true) {
+                System.out.println("$~");
+                String input = scanner.nextLine();
 
-                if(command == null) {
-                    continue;
-                }
-
-                executeCommand(command);
-            } catch (WrongCommandException e) {
-                System.out.println(e.getMessage());
+                processInput(input);
             }
+        }
+    }
+
+    private void processInput(String input) {
+        try {
+            Command command = CommandParser.parseCommand(input);
+
+            if (command == null) {
+                return;
+            }
+            executeCommand(command);
+
+        } catch (WrongCommandException e) {
+            System.out.println(e.getMessage());
         }
     }
 
@@ -60,8 +73,8 @@ class Simulator {
      */
     private void report() {
 
-        if(currentPosition.getX() == -1 && currentPosition.getY() == -1) {
-            System.out.println("Robot is not placed.");
+        if (currentPosition.getX() == -1 && currentPosition.getY() == -1) {
+            System.out.println("Robot is not placed, yet");
             return;
         }
 
@@ -88,8 +101,8 @@ class Simulator {
      */
     private void move() {
 
-        if(currentPosition.getX() == -1 && currentPosition.getY() == -1) {
-            System.out.println("Robot is not placed.");
+        if (currentPosition.getX() == -1 && currentPosition.getY() == -1) {
+            System.out.println("Robot is not placed, yet");
             return;
         }
 
@@ -115,7 +128,7 @@ class Simulator {
                 break;
         }
 
-        if(newX < lowerBound.getX() || newY < lowerBound.getY()
+        if (newX < lowerBound.getX() || newY < lowerBound.getY()
                 || newX > upperBound.getX() || newY > upperBound.getY()) {
             System.out.println("Cannot move to " + direction);
             return;
@@ -130,8 +143,8 @@ class Simulator {
      */
     private void turnRight() {
 
-        if(currentPosition.getX() == -1 && currentPosition.getY() == -1) {
-            System.out.println("Robot is not placed.");
+        if (currentPosition.getX() == -1 && currentPosition.getY() == -1) {
+            System.out.println("Robot is not placed, yet");
             return;
         }
 
@@ -159,8 +172,8 @@ class Simulator {
      */
     private void turnLeft() {
 
-        if(currentPosition.getX() == -1 && currentPosition.getY() == -1) {
-            System.out.println("Robot is not placed.");
+        if (currentPosition.getX() == -1 && currentPosition.getY() == -1) {
+            System.out.println("Robot is not placed, yet");
             return;
         }
 
@@ -185,6 +198,7 @@ class Simulator {
 
     /**
      * Place the robot at the (x, y) facing the direction
+     *
      * @param args 0 - value of x
      *             1 - value of y
      *             2 - direction
@@ -206,8 +220,8 @@ class Simulator {
             return;
         }
 
-        if(x >= lowerBound.getX() && y >= lowerBound.getY() &&
-                x <= upperBound.getX() && y <= upperBound.getY() ) {
+        if (x >= lowerBound.getX() && y >= lowerBound.getY() &&
+                x <= upperBound.getX() && y <= upperBound.getY()) {
             currentPosition.setX(x);
             currentPosition.setY(y);
             currentPosition.setDirection(direction);
