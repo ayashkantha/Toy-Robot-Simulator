@@ -18,20 +18,20 @@ git clone https://github.com/ayashkantha/Toy-Robot-Simulator.git
 
 ### Setup
 
-####Linux
+#### Linux
 ```shell
 $ chmod +x gradlew
 $ ./gradlew build
 ```
 
-####Windows
+#### Windows
 ```cmd
 > .\gradlew.bat build
 ```
 
-###Run Application
+### Run Application
 
-####Linux
+#### Linux
 ```shell
 $ java -jar build/libs/Robot-Assignment-1.0.jar
 ```
