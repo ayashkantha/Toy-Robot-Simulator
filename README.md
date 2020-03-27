@@ -36,7 +36,7 @@ $ ./gradlew build
 $ java -jar build/libs/Robot-Assignment-1.0.jar
 ```
 
-####Windows
+#### Windows
 ```cmd
 > java -jar .\build\libs\Robot-Assignment-1.0.jar
 ```
