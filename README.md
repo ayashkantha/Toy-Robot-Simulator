@@ -44,7 +44,7 @@ $ java -jar build/libs/Robot-Assignment-1.0.jar
 ### Demo
 
 Once you correctly run the application, it will wait for your
- input command. Please try the following command sequence.
+ input command. Please try the following command sequence(ignore `$~` input prompt). 
 
 ```shell
 $~
