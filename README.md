@@ -71,11 +71,23 @@ about it because that means the application is working perfectly!
 Visit <a href="https://github.com/ayashkantha/Toy-Robot-Simulator/blob/master/src/test/java/com/zonedigital/simulation/robot/TestSimulator.java" target="_blank">**Tests**</a> for more info
 
 #### Linux
+
+Integration Tests with Demo Data
 ```shell
 $ ./gradlew :cleanTest :test --tests "com.zonedigital.simulation.robot.TestSimulator"
 ```
 
+Parser Test
+```shell
+$ ./gradlew :cleanTest :test --tests "com.zonedigital.simulation.robot.TestParser"
+```
+
 #### Windows
+Integration Tests with Demo Data
 ```cmd
 >  .\gradlew.bat :cleanTest :test --tests "com.zonedigital.simulation.robot.TestSimulator"
+```
+Parser Test
+```cmd
+>  .\gradlew.bat :cleanTest :test --tests "com.zonedigital.simulation.robot.TestParser"
 ```
