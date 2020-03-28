@@ -63,7 +63,7 @@ The final `report` command should output
 
 `4, 5, EAST`
 
-### Running Tests
+### Running Tests with Demo Data
 
 This doesn't display anything since every test passes. Do not worry
 about it because that means the application is working perfectly!
